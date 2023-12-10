@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "my-app",
-    "slug": "my-app",
-    "version": "1.0.0",
+    "name": "TAM",
+    "slug": "TAM",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -21,10 +21,27 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.inuside21.TAM",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyD47Gb5b-u-_qRk8zNlGx3Iod5fb1weKEU"
+        }
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b1ec02ba-cb84-4467-80b4-c18aa3cb3974"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/b1ec02ba-cb84-4467-80b4-c18aa3cb3974"
     }
   }
 }
