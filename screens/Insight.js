@@ -160,7 +160,7 @@ export default function Insight({ route, navigation }) {
                 </View>
                 <View style={{ flex: 1 }}>
                   <Text style={{ color: AppConfig.whiteColor, fontSize: 30, fontWeight: 'bold', marginTop: 20, marginBottom: 10 }}>Daily Report</Text>
-                  {reportDataList.map((item) => DataReportHolder(item))}
+                  {reportDataList && reportDataList.map((item) => DataReportHolder(item))}
 
                   <Text style={{ color: AppConfig.whiteColor, fontSize: 30, fontWeight: 'bold', marginTop: 20, marginBottom: 10 }}>Tree Monitored</Text>
                   {treeDataList.map((item) => DataTreeHolder(item))}

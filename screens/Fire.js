@@ -160,7 +160,7 @@ export default function Fire({ route, navigation }) {
                 </View>
                 <View style={{ flex: 1 }}>
                   <Text style={{ color: AppConfig.whiteColor, fontSize: 30, fontWeight: 'bold', marginTop: 20, marginBottom: 10 }}>Report</Text>
-                  {reportDataList.map((item) => DataReportHolder(item))}
+                  {reportDataList && reportDataList.map((item) => DataReportHolder(item))}
                 </View>
             </ScrollView>
           )

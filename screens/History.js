@@ -42,7 +42,7 @@ export default function History({ route, navigation }) {
 
     try 
     {
-      const url = AppConfig.webserver + "server/api.php?mode=fallview";
+      const url = AppConfig.webserver + "server/api.php?mode=historyview";
   
       /*
       // Prepare the data as an object
@@ -148,7 +148,7 @@ export default function History({ route, navigation }) {
             <ScrollView style={{ flex: 1, }} contentContainerStyle={{ flexGrow: 1, padding: 20 }}>
                 <View style={{ flex: 1 }}>
                   <Text style={{ color: AppConfig.blackColor, fontSize: 30, fontWeight: 'bold', marginTop: 20, marginBottom: 10 }}>Notifications</Text>
-                  {reportDataList.map((item) => DataReportHolder(item))}
+                  {reportDataList && reportDataList.map((item) => DataReportHolder(item))}
                 </View>
             </ScrollView>
           )
