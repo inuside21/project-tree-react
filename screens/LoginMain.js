@@ -3,6 +3,7 @@ import { ImageBackground, Pressable, SafeAreaView, StyleSheet, ScrollView, View,
 import MapView from 'react-native-maps';
 import * as ImagePicker from 'expo-image-picker';
 import { Image } from 'expo-image';
+import { Audio } from 'expo-av';
 import { ActivityIndicator, Appbar, Avatar, Badge, Banner, Button, Card, Checkbox, DataTable, Dialog, Divider, FAB, Icon, IconButton, List, Modal, Portal, Provider, RadioButton, SegmentedButtons, Snackbar, Surface, Switch, Text, TextInput,  MD2Colors } from 'react-native-paper';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -116,6 +117,23 @@ export default function LoginMain({ route, navigation }) {
 
   // FUNCTIONS
   // =========================
+  const storeData = async (value) => {
+    try {
+      await AsyncStorage.setItem('my-key', value);
+    } catch (e) {
+    }
+  };
+
+  const getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem('my-key');
+      if (value !== null) {
+        // value previously stored
+      }
+    } catch (e) {
+      // error reading value
+    }
+  };
 
 
   // VIEW

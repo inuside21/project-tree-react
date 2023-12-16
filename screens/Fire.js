@@ -3,6 +3,7 @@ import { ImageBackground, Pressable, SafeAreaView, StyleSheet, ScrollView, View,
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import * as ImagePicker from 'expo-image-picker';
 import { Image } from 'expo-image';
+import { Audio } from 'expo-av';
 import { ActivityIndicator, Appbar, Avatar, Badge, Banner, Button, Card, Checkbox, DataTable, Dialog, Divider, FAB, Icon, IconButton, List, Modal, Portal, Provider, RadioButton, SegmentedButtons, Snackbar, Surface, Switch, Text, TextInput,  MD2Colors } from 'react-native-paper';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -55,6 +56,7 @@ export default function Fire({ route, navigation }) {
       // Prepare the data as FormData
       const formData = new FormData();
       formData.append('tToken', tToken);
+      formData.append('tLogFire', tToken);
 
       // Use Promise.race to implement the timeout
       const timeoutDuration = 10000;
