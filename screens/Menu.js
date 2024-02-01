@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useIsFocused } from '@react-navigation/native';
 import { ImageBackground, Pressable, SafeAreaView, StyleSheet, ScrollView, View, VirtualizedList } from 'react-native';
 import MapView from 'react-native-maps';
 import * as ImagePicker from 'expo-image-picker';
@@ -13,6 +14,7 @@ import AppConfig from '../config/config';
 export default function Menu({ route, navigation }) {
   const { tToken } = route.params;
   const [isLoading, setIsLoading] = useState(true);
+  const isFocused = useIsFocused(); 
   
   const [userData, setUserData] = new useState({});
 
@@ -41,6 +43,24 @@ export default function Menu({ route, navigation }) {
 
     return unsubscribe;
   }, [navigation]);
+
+  useEffect(() => {
+    let intervalId;
+
+    if (isFocused) {
+      // Start the interval only when the page is focused
+      intervalId = setInterval(() => {
+        LoadUser();
+      }, 5000);
+    }
+
+    return () => {
+      // Clear the interval when the component loses focus
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+    };
+  }, [isFocused]);
 
   const LoadUser = async () => {
     setIsLoading(true);
